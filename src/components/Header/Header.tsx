@@ -1,4 +1,4 @@
-﻿import './Header.scss'
+﻿import './header.scss'
 import logo from '../../assets/img/register/logo_final.png'
 import fallbackAvatar from '../../assets/img/avatar-fallback.svg'
 import { useEffect, useRef, useState } from 'react'
@@ -46,7 +46,7 @@ function Header() {
     return (
         <header className="header">
             <ul className="header-nav">
-                
+
                 <li className="header-item item-logo">
                     <a href="/home">
                         <img className="logo" src={logo} alt="logo" />
