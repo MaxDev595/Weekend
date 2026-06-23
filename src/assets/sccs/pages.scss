@@ -1,0 +1,271 @@
+.page {
+    width: min(100% - 32px, 680px);
+    margin: 24px auto 48px;
+    padding: 0;
+    min-width: 0;
+
+    &__header {
+        margin-bottom: 20px;
+
+        h2 {
+            color: var(--white);
+            margin: 0 0 4px 0;
+            font-size: 22px;
+        }
+
+        p {
+            color: #828282;
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+
+    &__empty {
+        color: #828282;
+        text-align: center;
+        margin-top: 40px;
+        font-size: 15px;
+    }
+}
+
+// Сетка фото
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+
+    &__item {
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Список постов
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-card {
+    background: #222222;
+    border-radius: 12px;
+    padding: 16px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__author {
+        margin: 0;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    &__date {
+        margin: 0;
+        color: #828282;
+        font-size: 12px;
+    }
+
+    &__text {
+        color: var(--white);
+        margin: 0 0 12px 0;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+}
+
+// Профиль
+.profile {
+    &__cover {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        border-radius: 12px;
+        margin-bottom: -50px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 0 16px 16px;
+        border-bottom: 1px solid #333;
+        margin-bottom: 20px;
+    }
+
+    &__avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid #141414;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__info {
+        flex: 1;
+        min-width: 180px;
+        padding-bottom: 8px;
+    }
+
+    &__name {
+        color: var(--white);
+        margin: 0 0 4px 0;
+        font-size: 22px;
+    }
+
+    &__email {
+        color: #828282;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    &__stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding-bottom: 8px;
+    }
+
+    &__stat {
+        text-align: center;
+
+        span {
+            display: block;
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0;
+            color: #828282;
+            font-size: 12px;
+        }
+    }
+
+    &__posts {
+        h3 {
+            color: var(--white);
+            margin: 0 0 16px 0;
+        }
+    }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+    .page {
+        width: min(calc(100% - 112px), 680px);
+        margin-left: max(92px, calc((100vw - 680px) / 2));
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .page {
+        width: min(100% - 24px, 680px);
+        margin: 16px auto 88px;
+    }
+
+    .profile__cover {
+        height: 150px;
+    }
+
+    .profile__header {
+        align-items: center;
+        padding: 0 12px 14px;
+    }
+
+    .profile__avatar {
+        width: 84px;
+        height: 84px;
+    }
+
+    .profile__stats {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .photos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        width: min(100% - 16px, 680px);
+        margin: 12px auto 88px;
+    }
+
+    .page__header h2 {
+        font-size: 18px;
+    }
+
+    .profile__cover {
+        height: 120px;
+        border-radius: 8px;
+    }
+
+    .profile__avatar {
+        width: 72px;
+        height: 72px;
+        border-width: 3px;
+    }
+
+    .profile__name {
+        font-size: 18px;
+    }
+
+    .profile__stats {
+        gap: 8px;
+    }
+
+    .profile__stat span {
+        font-size: 16px;
+    }
+
+    .photos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+
+    .post-card {
+        padding: 12px;
+        border-radius: 10px;
+    }
+}

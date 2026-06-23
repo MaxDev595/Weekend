@@ -1,0 +1,125 @@
+.register {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../img/register/vk_w_smooth.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
+    padding: 16px;
+}
+
+.register__wrapper {
+    width: 100%;
+    min-height: calc(100vh - 32px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box_reg {
+    width: min(100%, 376px);
+    min-height: 265px;
+    padding: clamp(20px, 6vw, 28px);
+    border-radius: 14px;
+    background: #19191A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic--reg {
+    img {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 12px;
+        display: block;
+    }
+}
+
+.title--reg {
+    margin: 0;
+    text-align: center;
+}
+
+.text-reg {
+    text-align: center;
+    color: #909294;
+}
+
+.btn-reg {
+    width: 100%;
+    max-width: 304px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    background: #212122;
+    cursor: pointer;
+    transition: 300ms ease;
+    margin: 20px 0 0 0;
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+}
+
+.btn-reg:hover {
+    background: #2B2B2C;
+}
+
+.help--reg {
+    font-size: 14px;
+    color: var(--white);
+    text-decoration: none;
+    margin-top: 32px;
+    margin-bottom: 20px;
+}
+
+.footer-reg {
+    font-size: 12px;
+    color: var(--white);
+
+    a {
+        color: var(--white);
+        transition: all 200ms ease;
+    }
+
+    a:hover {
+        color: #70a9e9;
+    }
+}
+
+@media (max-width: 480px) {
+    .register {
+        padding: 12px;
+    }
+
+    .box_reg {
+        border-radius: 10px;
+    }
+
+    .btn-reg {
+        height: 52px;
+        font-size: 16px;
+
+        img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+    }
+
+    .help--reg {
+        margin-top: 20px;
+    }
+}
