@@ -16,7 +16,7 @@ function Register() {
                 const user = await res.json()
                 localStorage.setItem('user', JSON.stringify(user))
 
-                await fetch('http://localhost:3000/users', {
+                await fetch("/api/users", {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

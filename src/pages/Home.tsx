@@ -29,7 +29,7 @@ function Home() {
 
     const fetchPosts = async () => {
         try {
-            const res = await fetch('http://localhost:3000/posts')
+            const res = await fetch('/api/users/posts')
             if (!res.ok) return
             const data = await res.json()
             const fetched = Array.isArray(data) ? data : data?.value ?? []
@@ -72,7 +72,7 @@ function Home() {
         setLoading(true)
         setError(null)
         try {
-            const response = await fetch('http://localhost:3000/posts', {
+            const response = await fetch('/api/users/posts', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text, image, email: user.email, name: user.name, picture: user.picture })
@@ -99,7 +99,7 @@ function Home() {
     }
 
     const handleDelete = async (id: number) => {
-        await fetch(`http://localhost:3000/posts/${id}`, { method: 'DELETE' })
+        await fetch(`/api/users/posts/${id}`, { method: 'DELETE' })
         setPosts((prev) => {
             const updated = prev.filter((p) => p.id !== id)
             localStorage.setItem('posts', JSON.stringify(updated))
